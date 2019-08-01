@@ -14,8 +14,11 @@ class JoyTwist(object):
     def joy_callback(self, joy_msg):
         twist = Twist()
         if joy_msg.buttons[0] == 1:
-            twist.linear.x = joy_msg.axes[7] * 0.2
-            twist.angular.z = joy_msg.axes[6] * 3.14 / 4
+            twist.linear.x = joy_msg.axes[1] # * 0.2
+            twist.angular.z = joy_msg.axes[0] # * 3.14 / 4
+
+            # twist.linear.x = joy_msg.axes[7] * 0.2
+            # twist.angular.z = joy_msg.axes[6] * 3.14 / 4
         else:
             twist.linear.x = 0
             twist.angular.z = 0
